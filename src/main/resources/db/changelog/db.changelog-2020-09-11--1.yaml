@@ -1,0 +1,12 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2020-09-11--1
+      author: piotr-jowko
+      changes:
+        - createIndex:
+            columns:
+              - column:
+                  name: content
+            indexName: idx_data_content
+            tableName: data
+            unique: false

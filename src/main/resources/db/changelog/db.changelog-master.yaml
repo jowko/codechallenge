@@ -1,19 +1,6 @@
 
 databaseChangeLog:
-  - changeSet:
-      id: 2020-08-27--1
-      author: pmig
-      changes:
-        - createTable:
-            tableName: data
-            columns:
-              - column:
-                  name: id
-                  type: bigint
-                  autoIncrement: true
-                  constraints:
-                    primaryKey: true
-                    nullable: false
-              - column:
-                  name: content
-                  type: text
+  - include:
+      file: db/changelog/db.changelog-2020-08-27--1.yaml
+  - include:
+      file: db/changelog/db.changelog-2020-09-11--1.yaml
