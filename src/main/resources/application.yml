@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/codechallenge
+    driverClassName: org.postgresql.Driver
+    username: codechallengeapp
+    password: codechallengepassword
+  jpa:
+    hibernate.ddl-auto: none
+    database-platform: org.hibernate.dialect.PostgreSQL10Dialect
+    open-in-view: false
+
+logging:
+  level:
+    root: INFO
