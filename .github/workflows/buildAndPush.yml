@@ -3,6 +3,9 @@ name: Build and push docker image
 on:
 #  push:
 #    branches: [ develop ]
+  push:
+    branches-ignore:
+      - '**'
 
 jobs:
   build:
