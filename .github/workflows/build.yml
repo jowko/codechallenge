@@ -1,9 +1,9 @@
 name: Java build
 
 on:
-  push:
-    branches: [ develop ]
   pull_request:
+    branches: [ develop ]
+  push:
     branches: [ develop ]
 
 jobs:

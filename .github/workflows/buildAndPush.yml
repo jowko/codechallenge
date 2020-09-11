@@ -3,6 +3,8 @@ name: Build and push docker image
 on:
   push:
     branches: [ develop ]
+  pull_request:
+    branches: [ develop ]
 
 jobs:
   build:
@@ -10,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - uses: actions/checkout@v2
     - name: Build docker images using cache
       uses: whoan/docker-build-with-cache-action@v5
       with:

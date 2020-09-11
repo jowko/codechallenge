@@ -18,8 +18,11 @@ FROM adoptopenjdk/openjdk11:alpine-jre
 
 WORKDIR application
 COPY --from=builder application/dependencies/ ./
+RUN true
 COPY --from=builder application/snapshot-dependencies/ ./
+RUN true
 COPY --from=builder application/application/ ./
+RUN true
 COPY --from=builder application/spring-boot-loader/ ./
 
 ARG SERVER_PORT=8080
