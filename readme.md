@@ -2,6 +2,10 @@
 
 Welcome to our code challenge.
 
+## Notes
+Some additional changes were performed.
+- multistage dockerfile was created
+- new make commands were created: `build` which will build application docker image and `runall` which will run both app and DB at the same time
 
 ## Get started
 

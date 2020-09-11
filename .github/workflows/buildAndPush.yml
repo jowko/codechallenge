@@ -1,0 +1,20 @@
+name: Build and push docker image
+
+on:
+  push:
+    branches: [ develop ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Build docker images using cache
+      uses: whoan/docker-build-with-cache-action@v5
+      with:
+        username: jowko
+        password: "${{ secrets.GITHUB_TOKEN }}"
+        registry: docker.pkg.github.com
+        image_name: codechallenge
+        image_tag: latest,${{github.event.number}}
