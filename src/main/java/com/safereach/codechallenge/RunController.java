@@ -1,19 +1,22 @@
 package com.safereach.codechallenge;
 
+import com.safereach.codechallenge.donottouch.Data;
 import com.safereach.codechallenge.donottouch.DoNotTouchProcessor;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
+@RequiredArgsConstructor
 public class RunController {
 
-    @Autowired
-    private DoNotTouchProcessor processor;
+    private final DoNotTouchProcessor processor;
 
     @GetMapping("/run")
-    public String run() {
-        return processor.run().toString();
+    public List<Data> run() {
+        return processor.run();
     }
 
 }
