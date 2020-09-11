@@ -17,7 +17,6 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import java.util.List;
 
 import static com.safereach.codechallenge.donottouch.DataTestFactory.dataEntity;
-import static java.util.Arrays.asList;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
@@ -41,7 +40,7 @@ class RunControllerTest {
     void shouldRunProcessor() throws Exception {
         //given
         Data expectedData = dataEntity();
-        when(processor.run()).thenReturn(asList(expectedData));
+        when(processor.run()).thenReturn(List.of(expectedData));
         //when
         ResultActions result = mockMvc.perform(get("/run")
                 .accept(APPLICATION_JSON_VALUE));

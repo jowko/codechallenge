@@ -9,7 +9,6 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import java.util.List;
 
 import static com.safereach.codechallenge.donottouch.DataTestFactory.dataEntity;
-import static java.util.Arrays.asList;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.when;
@@ -31,7 +30,7 @@ class DoNotTouchProcessorTest {
     void shouldFindData() {
         //given
         Data expectedData = dataEntity();
-        when(dataRepository.findByContent(anyString())).thenReturn(asList(expectedData));
+        when(dataRepository.findByContent(anyString())).thenReturn(List.of(expectedData));
         //when
         List<Data> data = processor.run();
         //then

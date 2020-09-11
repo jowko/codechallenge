@@ -18,3 +18,4 @@ jobs:
         registry: docker.pkg.github.com
         image_name: codechallenge
         image_tag: latest,${{github.event.number}}
+        pull_image_and_stages: false
